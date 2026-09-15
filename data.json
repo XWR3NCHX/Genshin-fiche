@@ -1,0 +1,26 @@
+[
+  {
+    "nom": "Albedo",
+    "image": "image/albedofile.jpg"
+  },
+  {
+    "nom": "Arlecchino",
+    "image": "image/arlecchinofile.jpg"
+  },
+  {
+    "nom": "Furina",
+    "image": "image/furinafile.jpg"
+  },
+  {
+    "nom": "Nahida",
+    "image": "image/nahidafile.jpg"
+  },
+  {
+    "nom": "Zhongli",
+    "image": "image/zhonglifile.jpg"
+  },
+  {
+    "nom": "Vesna",
+    "image": "image/Vesnafile.jpg"
+  }
+]

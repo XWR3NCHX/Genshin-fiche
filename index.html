@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fiches d'amélioration Genshin Impact</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Fiches d'amélioration</h1>
+
+        <p>
+            Recherche un personnage pour afficher sa fiche.
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- BARRE DE RECHERCHE -->
+
+        <div class="search-container">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Rechercher un personnage..."
+                autocomplete="off"
+            >
+
+            <button
+                id="searchButton"
+                class="search-button"
+                type="button"
+                title="Rechercher"
+            >
+                🔍
+            </button>
+
+            <button
+                id="clearButton"
+                class="clear-button"
+                type="button"
+                title="Effacer"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- RÉSULTATS DE RECHERCHE -->
+
+        <div id="resultsInfo" class="results-info"></div>
+
+        <div
+            id="charactersGrid"
+            class="characters-grid"
+        ></div>
+
+
+        <!-- MESSAGE AUCUN RÉSULTAT -->
+
+        <div
+            id="noResults"
+            class="no-results hidden"
+        >
+
+            <div class="question-mark">
+                ?
+            </div>
+
+            <h2>
+                Personnage introuvable
+            </h2>
+
+            <p>
+                Aucun personnage ne correspond à ta recherche.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FENÊTRE IMAGE EN GRAND
+    ========================== -->
+
+    <div
+        id="imageModal"
+        class="image-modal hidden"
+    >
+
+        <button
+            id="modalClose"
+            class="modal-close"
+            type="button"
+        >
+            ×
+        </button>
+
+        <img
+            id="modalImage"
+            src=""
+            alt=""
+        >
+
+    </div>
+
+
+    <footer>
+        Banque personnelle de fiches Genshin Impact
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
