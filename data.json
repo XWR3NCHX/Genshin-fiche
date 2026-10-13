@@ -206,5 +206,45 @@
   {
     "nom": "Mika",
     "image": "images/Mikafile.jpg"
+  },
+  {
+    "nom": "Lynette",
+    "image": "images/Lynettefile.jpg"
+  },
+  {
+    "nom": "Layla",
+    "image": "images/Laylafile.jpg"
+  },
+  {
+    "nom": "Kuki Shinobu",
+    "image": "images/Kukishinobufile.jpg"
+  },
+  {
+    "nom": "Kujou Sara",
+    "image": "images/Kujousarafile.jpg"
+  },
+  {
+    "nom": "Kirara",
+    "image": "images/Kirarafile.jpg"
+  },
+  {
+    "nom": "Kaveh",
+    "image": "images/Kavehfile.jpg"
+  },
+  {
+    "nom": "Kaeya",
+    "image": "images/Kaeyafile.jpg"
+  },
+  {
+    "nom": "Kachina",
+    "image": "images/Kachinafile.jpg"
+  },
+  {
+    "nom": "Jahoda",
+    "image": "images/Jahodafile.jpg"
+  },
+  {
+    "nom": "Illuga",
+    "image": "images/Illugafile.jpg"
   }
 ]
