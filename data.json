@@ -142,5 +142,69 @@
   {
     "nom": "Yumemizuki",
     "image": "images/Yumemizukifile.jpg"
+  },
+  {
+    "nom": "Diona",
+    "image": "images/Dionafile.jpg"
+  },
+  {
+    "nom": "Faruzan",
+    "image": "images/Faruzanfile.jpg"
+  },
+  {
+    "nom": "Bennett",
+    "image": "images/Bennettfile.jpg"
+  },
+  {
+    "nom": "Xiangling",
+    "image": "images/Xianglingfile.jpg"
+  },
+  {
+    "nom": "Yoimiya",
+    "image": "images/Yoimiyafile.jpg"
+  },
+  {
+    "nom": "Yun Jin",
+    "image": "images/Yunjinfile.jpg"
+  },
+  {
+    "nom": "Yaoyao",
+    "image": "images/Yaoyaofile.jpg"
+  },
+  {
+    "nom": "Xinyan",
+    "image": "images/Xinyanfile.jpg"
+  },
+  {
+    "nom": "Thomas",
+    "image": "images/Thomasfile.jpg"
+  },
+  {
+    "nom": "Sethos",
+    "image": "images/Sethosfile.jpg"
+  },
+  {
+    "nom": "Sayu",
+    "image": "images/Sayufile.jpg"
+  },
+  {
+    "nom": "Razor",
+    "image": "images/Razorfile.jpg"
+  },
+  {
+    "nom": "Prune",
+    "image": "images/Prunefile.jpg"
+  },
+  {
+    "nom": "Ororon",
+    "image": "images/Ororonfile.jpg"
+  },
+  {
+    "nom": "Ningguang",
+    "image": "images/Ningguangfile.jpg"
+  },
+  {
+    "nom": "Mika",
+    "image": "images/Mikafile.jpg"
   }
 ]
