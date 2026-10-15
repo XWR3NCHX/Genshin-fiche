@@ -246,5 +246,69 @@
   {
     "nom": "Illuga",
     "image": "images/Illugafile.jpg"
+  },
+  {
+    "nom": "Ifa",
+    "image": "images/Ifafile.jpg"
+  },
+  {
+    "nom": "Iansan",
+    "image": "images/Iansanfile.jpg"
+  },
+  {
+    "nom": "Heizou",
+    "image": "images/Heizoufile.jpg"
+  },
+  {
+    "nom": "Gorou",
+    "image": "images/goroufile.jpg"
+  },
+  {
+    "nom": "Gaming",
+    "image": "images/gamingfile.jpg"
+  },
+  {
+    "nom": "Freminet",
+    "image": "images/freminetfile.jpg"
+  },
+  {
+    "nom": "Fischl",
+    "image": "images/fischlfile.jpg"
+  },
+  {
+    "nom": "Rosalia",
+    "image": "images/rosaliafile.jpg"
+  },
+  {
+    "nom": "Dori",
+    "image": "images/dorifile.jpg"
+  },
+  {
+    "nom": "Dahlia",
+    "image": "images/dahliafile.jpg"
+  },
+  {
+    "nom": "Collei",
+    "image": "images/colleifile.jpg"
+  },
+  {
+    "nom": "Chongyun",
+    "image": "images/chongyunfile.jpg"
+  },
+  {
+    "nom": "Chevreuse",
+    "image": "images/chevreusefile.jpg"
+  },
+  {
+    "nom": "Charlotte",
+    "image": "images/charlottefile.jpg"
+  },
+  {
+    "nom": "Amber",
+    "image": "images/amberfile.jpg"
+  },
+  {
+    "nom": "Candace",
+    "image": "images/candacefile.jpg"
   }
 ]
