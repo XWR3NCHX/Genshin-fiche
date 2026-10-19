@@ -307,8 +307,65 @@
     "nom": "Amber",
     "image": "images/Amberfile.jpg"
   },
+  
   {
     "nom": "Candace",
     "image": "images/Candacefile.jpg"
+  },
+  {
+    "nom": "Xilonen",
+    "image": "images/Xilonenfile.jpg"
+  },
+  {
+    "nom": "Voyageur pyro",
+    "image": "images/Voyageurpyrofile.jpg"
+  },
+  {
+    "nom": "Nicole",
+    "image": "images/Nicolefile.jpg"
+  },
+  {
+    "nom": "Lyney",
+    "image": "images/Lyneyfile.jpg"
+  },
+  {
+    "nom": "Klee",
+    "image": "images/Kleefile.jpg"
+  },
+  {
+    "nom": "Hu Tao",
+    "image": "images/Hutaofile.jpg"
+  },
+  {
+    "nom": "Durin",
+    "image": "images/Durinfile.jpg"
+  },
+  {
+    "nom": "Yelan",
+    "image": "images/Yelanfile.jpg"
+  },
+  {
+    "nom": "Voyageur hydro",
+    "image": "images/Voyageurhydrofile.jpg"
+  },
+  {
+    "nom": "Vodianitsa",
+    "image": "images/Vodianitsafile.jpg"
+  },
+  {
+    "nom": "Sigewinne",
+    "image": "images/Sigewinnefile.jpg"
+  },
+  {
+    "nom": "Neuvillette",
+    "image": "images/Neuvillettefile.jpg"
+  },
+  {
+    "nom": "Mualani",
+    "image": "images/Mualanifile.jpg"
+  },
+  {
+    "nom": "Kokomi",
+    "image": "images/Kokomifile.jpg"
   }
 ]
