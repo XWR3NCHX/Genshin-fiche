@@ -371,5 +371,21 @@
    {
     "nom": "Ayato ",
     "image": "images/Ayatofile.jpg"
+  },
+   {
+    "nom": "Yae Miko",
+    "image": "images/yaemikofile.jpg"
+  },
+  {
+    "nom": "Voyageur electro",
+    "image": "images/Voyageurelectrofile.jpg"
+  },
+  {
+    "nom": "Ineffa",
+    "image": "images/Ineffafile.jpg"
+  },
+  {
+    "nom": "Flins",
+    "image": "images/Flinsfile.jpg"
   }
 ]
