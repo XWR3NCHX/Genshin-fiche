@@ -387,5 +387,45 @@
   {
     "nom": "Flins",
     "image": "images/Flinsfile.jpg"
+  },
+  {
+    "nom": "Wriothesley",
+    "image": "images/Wriothesleyfile.jpg"
+  },
+  {
+    "nom": "Skirk",
+    "image": "images/Skirkfile.jpg"
+  },
+  {
+    "nom": "Shenhe",
+    "image": "images/Shenhefile.jpg"
+  },
+  {
+    "nom": "Odette",
+    "image": "images/Odettefile.jpg"
+  },
+  {
+    "nom": "Lohen",
+    "image": "images/Lohenfile.jpg"
+  },
+  {
+    "nom": "Ganyu",
+    "image": "images/Ganyufile.jpg"
+  },
+  {
+    "nom": "Eula",
+    "image": "images/Eulafile.jpg"
+  },
+  {
+    "nom": "Escoffier",
+    "image": "images/Escoffierfile.jpg"
+  },
+  {
+    "nom": "Citlali",
+    "image": "images/Citlalifile.jpg"
+  },
+  {
+    "nom": "Ayaka",
+    "image": "images/Ayakafile.jpg"
   }
 ]
