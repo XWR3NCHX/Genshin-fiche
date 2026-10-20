@@ -427,5 +427,29 @@
   {
     "nom": "Ayaka",
     "image": "images/Ayakafile.jpg"
+  },
+  {
+    "nom": "Zibai",
+    "image": "images/Zibaifile.jpg"
+  },
+  {
+    "nom": "Zhongli",
+    "image": "images/Zhonglifile.jpg"
+  },
+  {
+    "nom": "Voyageur geo",
+    "image": "images/Voyageurgeofile.jpg"
+  },
+  {
+    "nom": "Navia",
+    "image": "images/Naviafile.jpg"
+  },
+  {
+    "nom": "Linnea",
+    "image": "images/Linneafile.jpg"
+  },
+  {
+    "nom": "Itto",
+    "image": "images/Ittofile.jpg"
   }
 ]
