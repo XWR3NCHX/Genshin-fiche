@@ -451,5 +451,33 @@
   {
     "nom": "Itto",
     "image": "images/Ittofile.jpg"
+  },
+  {
+    "nom": "Voyageur dendro",
+    "image": "images/Voyageurdendrofile.jpg"
+  },
+  {
+    "nom": "Nefer",
+    "image": "images/Neferfile.jpg"
+  },
+  {
+    "nom": "Nahida",
+    "image": "images/Nahidafile.jpg"
+  },
+  {
+    "nom": "Lauma",
+    "image": "images/Laumafile.jpg"
+  },
+  {
+    "nom": "Kinich",
+    "image": "images/Kinichfile.jpg"
+  },
+  {
+    "nom": "Emilie",
+    "image": "images/Emiliefile.jpg"
+  },
+  {
+    "nom": "Alhaitham",
+    "image": "images/Alhaithamfile.jpg"
   }
 ]
