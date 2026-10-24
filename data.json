@@ -479,5 +479,34 @@
   {
     "nom": "Alhaitham",
     "image": "images/Alhaithamfile.jpg"
+  },
+  
+  {
+    "nom": "Chasca",
+    "image": "images/Chascafile.jpg"
+  },
+  {
+    "nom": "Xiao",
+    "image": "images/Xiaofile.jpg"
+  },
+  {
+    "nom": "Xianyun",
+    "image": "images/Xianyunfile.jpg"
+  },
+  {
+    "nom": "Voyageur Anémo",
+    "image": "images/Voyageuranemofile.jpg"
+  },
+  {
+    "nom": "Venti",
+    "image": "images/Ventifile.jpg"
+  },
+  {
+    "nom": "Nomade",
+    "image": "images/Nomadefile.jpg"
+  },
+  {
+    "nom": "Kazuha",
+    "image": "images/Kazuhafile.jpg"
   }
 ]
