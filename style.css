@@ -1,13 +1,13 @@
 
 /* ============================================
-   GENSHIN FICHES
-   Direction artistique : bleu nuit et or
+   GENSHIN FICHES — STYLE GLOBAL
+   Bleu nuit • Or • Interface mystique
    ============================================ */
 
 :root {
     --bg-main: #080d18;
     --bg-secondary: #0d1525;
-    --bg-card: rgba(17, 27, 46, 0.88);
+    --bg-card: rgba(17, 27, 46, 0.92);
     --bg-card-hover: rgba(24, 38, 62, 0.98);
 
     --gold: #d8b56a;
@@ -63,7 +63,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
 
     background-image:
@@ -89,6 +89,11 @@ body::before {
         400px 400px;
 }
 
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
 a {
     color: var(--gold-light);
     text-decoration: none;
@@ -105,8 +110,7 @@ input {
 }
 
 /* ============================================
-   EN-TÊTE ET IDENTITÉ VISUELLE
-   Nécessite le HTML .site-brand et .header-content
+   EN-TÊTE
    ============================================ */
 
 header,
@@ -115,26 +119,26 @@ header,
     overflow: hidden;
     text-align: center;
 
-    padding: 22px 20px 38px;
+    padding: 18px 20px 38px;
 
     border-bottom: 1px solid var(--border);
 
     background:
         linear-gradient(
             180deg,
-            rgba(21, 34, 56, 0.82),
-            rgba(8, 13, 24, 0.25)
+            rgba(21, 34, 56, 0.88),
+            rgba(8, 13, 24, 0.32)
         );
 }
 
-/* Cercles décoratifs en arrière-plan */
+/* Décoration circulaire */
 
 header::before,
 header::after {
     content: "";
     position: absolute;
-    left: 50%;
     top: 50%;
+    left: 50%;
 
     width: 290px;
     height: 290px;
@@ -152,7 +156,7 @@ header::after {
     border-color: rgba(216, 181, 106, 0.06);
 }
 
-/* Logo et nom du site */
+/* ---------- Logo et nom ---------- */
 
 .site-brand {
     position: relative;
@@ -161,25 +165,23 @@ header::after {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 11px;
+    gap: 12px;
 
-    margin-bottom: 28px;
+    margin: 0 0 28px;
 
     color: var(--text-main);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.13em;
 
     text-decoration: none;
 
-    transition:
-        opacity var(--transition),
-        color var(--transition);
+    transition: opacity var(--transition);
 }
 
 .site-brand:hover {
-    color: var(--gold-light);
-    opacity: 0.88;
+    color: var(--text-main);
+    opacity: 0.85;
 }
 
 .site-logo {
@@ -188,20 +190,20 @@ header::after {
     justify-content: center;
     flex-shrink: 0;
 
-    width: 39px;
-    height: 39px;
+    width: 49px;
+    height: 49px;
 
     color: var(--gold-light);
     font-size: 1.8rem;
     line-height: 1;
 
     border: 1px solid var(--border-hover);
-    border-radius: 12px;
+    border-radius: 15px;
 
     background: linear-gradient(
         145deg,
-        rgba(216, 181, 106, 0.16),
-        rgba(17, 27, 46, 0.9)
+        rgba(216, 181, 106, 0.15),
+        rgba(17, 27, 46, 0.96)
     );
 
     box-shadow: 0 0 20px rgba(216, 181, 106, 0.1);
@@ -212,35 +214,30 @@ header::after {
     font-weight: 750;
 }
 
-/* Titre principal */
+/* ---------- Titre principal ---------- */
 
 .header-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
 }
 
 header h1,
 .header-content h1 {
-    position: relative;
-    z-index: 1;
-
-    margin: 0 0 10px;
+    margin: 0 0 12px;
 
     color: var(--gold-light);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 750;
+    letter-spacing: 0.035em;
+    line-height: 1.2;
 
-    text-shadow: 0 0 28px rgba(216, 181, 106, 0.18);
+    text-shadow: 0 0 28px rgba(216, 181, 106, 0.14);
 }
 
 header p,
 .header-content p {
-    position: relative;
-    z-index: 1;
-
-    max-width: 650px;
+    max-width: 700px;
     margin: 0 auto;
 
     color: var(--text-secondary);
@@ -248,21 +245,40 @@ header p,
 }
 
 /* ============================================
-   RECHERCHE
+   RECHERCHE ET BOUTONS
    ============================================ */
+
+/* Conteneur commun éventuel des contrôles */
+.search-container,
+.search-controls,
+.search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: min(800px, calc(100% - 32px));
+    margin: 32px auto 24px;
+    text-align: center;
+}
+
+/* Barre de recherche */
 
 #searchInput {
     display: block;
-    width: min(600px, calc(100% - 40px));
+
+    width: min(750px, calc(100% - 32px));
+    min-width: 0;
 
     margin: 32px auto 14px;
-    padding: 14px 18px;
+    padding: 18px 22px;
 
     color: var(--text-main);
-    background: rgba(13, 21, 37, 0.92);
+    background: rgba(13, 21, 37, 0.94);
 
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     outline: none;
 
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.18);
@@ -286,16 +302,20 @@ header p,
         0 0 22px rgba(216, 181, 106, 0.08);
 }
 
-/* ============================================
-   BOUTONS
-   ============================================ */
+/* Groupe dédié aux boutons sous la recherche */
 
 .search-button,
 .clear-button {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
 
-    margin: 5px;
-    padding: 11px 20px;
+    min-width: 64px;
+    min-height: 54px;
+
+    margin: 0;
+    padding: 12px 20px;
 
     color: var(--gold-light);
 
@@ -306,7 +326,7 @@ header p,
     );
 
     border: 1px solid var(--border);
-    border-radius: 9px;
+    border-radius: 11px;
 
     cursor: pointer;
 
@@ -322,6 +342,7 @@ header p,
 .clear-button:hover {
     color: #fff5d8;
     border-color: var(--gold);
+
     background: rgba(63, 57, 43, 0.75);
 
     box-shadow: var(--glow);
@@ -333,13 +354,22 @@ header p,
     transform: translateY(0);
 }
 
+/* Centre les boutons même s'ils sont directement dans le body.
+   Les règles spécifiques aux autres sections restent prioritaires. */
+
+body > .search-button,
+body > .clear-button {
+    position: relative;
+    left: auto;
+    right: auto;
+}
+
 /* ============================================
    INFORMATIONS SUR LES RÉSULTATS
    ============================================ */
 
 .results-info {
     width: min(1200px, calc(100% - 40px));
-
     margin: 22px auto;
 
     color: var(--text-secondary);
@@ -353,6 +383,7 @@ header p,
 
 .characters-grid {
     display: grid;
+
     grid-template-columns: repeat(
         auto-fill,
         minmax(180px, 1fr)
@@ -363,6 +394,8 @@ header p,
 
     width: min(1400px, calc(100% - 40px));
     margin: 28px auto 60px;
+
+    text-align: center;
 }
 
 /* ============================================
@@ -371,6 +404,7 @@ header p,
 
 .character-card {
     position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -395,7 +429,7 @@ header p,
         box-shadow var(--transition);
 }
 
-/* Filet doré en haut de chaque carte */
+/* Fine ligne dorée */
 
 .character-card::before {
     content: "";
@@ -432,7 +466,7 @@ header p,
     opacity: 1;
 }
 
-/* Portrait du personnage */
+/* Portrait */
 
 .character-card img {
     display: block;
@@ -440,8 +474,8 @@ header p,
     width: 100%;
     max-width: 240px;
     height: auto;
-    aspect-ratio: 3 / 4;
 
+    aspect-ratio: 3 / 4;
     object-fit: cover;
     object-position: center top;
 
@@ -460,11 +494,10 @@ header p,
     filter: brightness(1.06);
 }
 
-/* Nom du personnage */
+/* Nom */
 
 .character-name {
     width: 100%;
-
     margin: 13px 0 4px;
 
     color: var(--gold-light);
@@ -481,7 +514,6 @@ header p,
 
 .no-results {
     width: min(800px, calc(100% - 40px));
-
     margin: 45px auto;
     padding: 25px;
 
@@ -611,7 +643,6 @@ header p,
     color: #fff;
     background: #29364a;
     border-color: var(--gold);
-
     transform: rotate(90deg);
 }
 
@@ -711,7 +742,20 @@ footer a:hover {
 
     #searchInput {
         width: calc(100% - 28px);
-        margin-top: 24px;
+        margin: 24px auto 14px;
+    }
+
+    .search-container,
+    .search-controls,
+    .search-form {
+        width: calc(100% - 24px);
+        margin: 16px auto 24px;
+    }
+
+    .search-button,
+    .clear-button {
+        min-height: 48px;
+        padding: 10px 17px;
     }
 
     .characters-grid {
