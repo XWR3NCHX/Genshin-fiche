@@ -1,504 +1,592 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+/* =========================================
+   GENSHIN FICHES — DIRECTION ARTISTIQUE
+   Bleu nuit • Or • Ambiance mystique
+   ========================================= */
+
+:root {
+    --bg-main: #080d18;
+    --bg-secondary: #0d1525;
+    --bg-card: rgba(17, 27, 46, 0.88);
+    --bg-card-hover: rgba(24, 38, 62, 0.98);
+
+    --gold: #d8b56a;
+    --gold-light: #f1d99b;
+    --gold-dark: #9c7938;
+
+    --text-main: #f1f3f8;
+    --text-secondary: #a9b5c9;
+    --text-muted: #74829a;
+
+    --border: rgba(216, 181, 106, 0.22);
+    --border-hover: rgba(241, 217, 155, 0.75);
+
+    --shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+    --glow: 0 0 25px rgba(216, 181, 106, 0.12);
+
+    --radius: 14px;
+    --transition: 0.25s ease;
 }
 
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
+    margin: 0;
     min-height: 100vh;
-
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--text-main);
 
     background:
         radial-gradient(
-            circle at top,
-            #243247,
-            #101824 70%
+            ellipse at 50% -15%,
+            rgba(46, 68, 105, 0.38),
+            transparent 55%
+        ),
+        radial-gradient(
+            circle at 90% 35%,
+            rgba(120, 91, 42, 0.07),
+            transparent 30%
+        ),
+        var(--bg-main);
+
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        radial-gradient(
+            1px 1px at 15% 20%,
+            rgba(241, 217, 155, 0.4),
+            transparent
+        ),
+        radial-gradient(
+            1px 1px at 80% 30%,
+            rgba(255, 255, 255, 0.25),
+            transparent
+        ),
+        radial-gradient(
+            2px 2px at 60% 75%,
+            rgba(216, 181, 106, 0.2),
+            transparent
         );
 
-    color: white;
+    background-size: 240px 240px, 320px 320px, 400px 400px;
+}
+
+a {
+    color: var(--gold-light);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+a:hover {
+    color: #fff0c4;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+/* ---------- Header ---------- */
+
+header {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 58px 20px 38px;
+    border-bottom: 1px solid var(--border);
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(21, 34, 56, 0.82),
+            rgba(8, 13, 24, 0.25)
+        );
+}
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 290px;
+    height: 290px;
+    border: 1px solid rgba(216, 181, 106, 0.08);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+header::after {
+    width: 230px;
+    height: 230px;
+    border-color: rgba(216, 181, 106, 0.06);
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    margin: 0 0 10px;
+
+    color: var(--gold-light);
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: 0.07em;
+
+    text-shadow: 0 0 28px rgba(216, 181, 106, 0.18);
+}
+
+header p {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* ---------- Zone de recherche ---------- */
+
+#searchInput {
+    display: block;
+    width: min(600px, calc(100% - 40px));
+    margin: 32px auto 14px;
+    padding: 14px 18px;
+
+    color: var(--text-main);
+    background: rgba(13, 21, 37, 0.92);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.18);
+    transition:
+        border-color var(--transition),
+        box-shadow var(--transition),
+        background var(--transition);
+}
+
+#searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+#searchInput:focus {
+    border-color: var(--gold);
+    background: #101b2e;
+    box-shadow:
+        0 0 0 3px rgba(216, 181, 106, 0.09),
+        0 0 22px rgba(216, 181, 106, 0.08);
+}
+
+/* ---------- Boutons ---------- */
+
+.search-button,
+.clear-button {
+    display: inline-block;
+    margin: 5px;
+    padding: 11px 20px;
+
+    color: var(--gold-light);
+    background: linear-gradient(
+        135deg,
+        rgba(39, 51, 72, 0.96),
+        rgba(19, 29, 47, 0.96)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    cursor: pointer;
+
+    transition:
+        color var(--transition),
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.search-button:hover,
+.clear-button:hover {
+    color: #fff5d8;
+    border-color: var(--gold);
+    background: rgba(63, 57, 43, 0.75);
+    box-shadow: var(--glow);
+    transform: translateY(-2px);
+}
+
+.search-button:active,
+.clear-button:active {
+    transform: translateY(0);
+}
+
+/* ---------- Informations de résultats ---------- */
+
+.results-info {
+    width: min(1200px, calc(100% - 40px));
+    margin: 22px auto;
+    color: var(--text-secondary);
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* ---------- Grille des personnages ---------- */
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 22px;
+
+    width: min(1400px, calc(100% - 40px));
+    margin: 28px auto 60px;
+    align-items: stretch;
+}
+
+/* ---------- Carte personnage ---------- */
+
+.character-card {
+    position: relative;
+    overflow: hidden;
+    min-width: 0;
 
     display: flex;
     flex-direction: column;
-}
+    align-items: center;
 
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-    padding: 30px 6px 20px;
-}
-
-
-header h1 {
-    font-size: 40px;
-    font-weight: 300;
-}
-
-
-header p {
-    margin-top: 8px;
-
-    color: #aab4c2;
-
-    font-size: 18px;
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-main {
-    flex: 1;
-
-    width: 100%;
-
-    padding: 25px 20px 50px;
-}
-
-
-/* =========================
-   BARRE DE RECHERCHE
-========================= */
-
-.search-container {
-    position: relative;
-
-    width: min(630px, 100%);
-
-    margin: 20px auto 35px;
-}
-
-
-#searchInput {
-    width: 100%;
-    height: 72px;
-
-    padding: 0 110px 0 25px;
-
-    border-radius: 16px;
-
-    border: 1px solid #536174;
-
-    background: rgba(65, 78, 98, 0.65);
-
-    color: white;
-
-    font-size: 20px;
-
-    outline: none;
-}
-
-
-#searchInput::placeholder {
-    color: #d0d5dd;
-}
-
-
-#searchInput:focus {
-    border-color: #8ea8c8;
-
-    box-shadow:
-        0 0 0 3px rgba(142, 168, 200, 0.15);
-}
-
-
-/* =========================
-   BOUTON RECHERCHE
-========================= */
-
-.search-button {
-    position: absolute;
-
-    right: 55px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 45px;
-    height: 45px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #344258;
-
-    color: white;
-
-    font-size: 21px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-
-.search-button:hover {
-    background: #4a5b73;
-
-    transform:
-        translateY(-50%)
-        scale(1.08);
-}
-
-
-/* =========================
-   BOUTON EFFACER
-========================= */
-
-.clear-button {
-    position: absolute;
-
-    right: 12px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 30px;
-    height: 30px;
-
-    border: none;
-
-    background: transparent;
-
-    color: #aeb7c4;
-
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-
-.clear-button:hover {
-    color: white;
-}
-
-
-/* =========================
-   INFORMATIONS
-========================= */
-
-.results-info {
-    width: 100%;
-
-    max-width: 900px;
-
-    margin: 0 auto 15px;
-
-    color: #9da8b7;
-
+    padding: 12px;
+    color: var(--text-main);
     text-align: center;
 
-    font-size: 15px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        box-shadow var(--transition);
 }
 
+.character-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
 
-/* =========================
-   RÉSULTAT
-========================= */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
 
-.characters-grid {
-
-    width: 100%;
-
-    max-width: 900px;
-
-    margin: 0 auto;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 20px;
+    opacity: 0.45;
+    transition: opacity var(--transition);
 }
-
-
-/* =========================
-   PETITE FICHE CLIQUABLE
-========================= */
-
-.character-card {
-
-    width: 240px;
-
-    overflow: hidden;
-
-    border-radius: 16px;
-
-    background: #202b3b;
-
-    border: 1px solid #3b485b;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.25);
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
 
 .character-card:hover {
-
-    transform: translateY(-5px) scale(1.02);
-
-    border-color: #8ea8c8;
+    transform: translateY(-6px);
+    background: var(--bg-card-hover);
+    border-color: var(--border-hover);
 
     box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.35);
+        0 16px 38px rgba(0, 0, 0, 0.36),
+        0 0 22px rgba(216, 181, 106, 0.08);
 }
 
-
-/* =========================
-   IMAGE DE L'APERÇU
-========================= */
+.character-card:hover::before {
+    opacity: 1;
+}
 
 .character-card img {
-
     display: block;
-
     width: 100%;
+    max-width: 240px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
 
-    height: 300px;
+    background: #101a2b;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 9px;
 
-    object-fit: contain;
-
-    background: #111923;
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
 }
 
-
-/* =========================
-   NOM
-========================= */
+.character-card:hover img {
+    transform: scale(1.025);
+    filter: brightness(1.06);
+}
 
 .character-name {
+    width: 100%;
+    margin: 13px 0 4px;
+    color: var(--gold-light);
 
-    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 650;
+    line-height: 1.4;
 
-    text-align: center;
-
-    font-size: 19px;
-
-    font-weight: bold;
+    overflow-wrap: anywhere;
 }
 
-
-/* =========================
-   AUCUN RÉSULTAT
-========================= */
+/* ---------- Aucun résultat ---------- */
 
 .no-results {
+    width: min(800px, calc(100% - 40px));
+    margin: 45px auto;
+    padding: 25px;
 
+    color: var(--text-secondary);
     text-align: center;
 
-    margin-top: 35px;
-
-    color: #aeb8c6;
+    background: rgba(17, 27, 46, 0.65);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
-
-.no-results h2 {
-
-    margin-top: 15px;
-
-    color: white;
-
-    font-size: 28px;
-}
-
-
-.no-results p {
-
-    margin-top: 8px;
-
-    font-size: 18px;
-}
-
+/* ---------- Point d'interrogation / aide ---------- */
 
 .question-mark {
-
-    width: 70px;
-    height: 70px;
-
-    margin: auto;
-
-    display: flex;
-
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 
+    width: 34px;
+    height: 34px;
+    padding: 0;
+
+    color: var(--gold-light);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     border-radius: 50%;
 
-    background: #2d394b;
-
-    font-size: 32px;
+    cursor: pointer;
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
 }
 
+.question-mark:hover {
+    background: #1b2940;
+    border-color: var(--gold);
+    transform: rotate(8deg);
+}
 
-/* =========================
-   CACHÉ
-========================= */
+/* ---------- Classes utilitaires ---------- */
 
 .hidden {
     display: none !important;
 }
 
-
-/* =========================
-   FENÊTRE IMAGE EN GRAND
-========================= */
+/* ---------- Fenêtre modale ---------- */
 
 .image-modal {
-
     position: fixed;
-
     inset: 0;
-
     z-index: 1000;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
-    padding: 30px;
+    padding: 24px;
+    background: rgba(3, 6, 13, 0.88);
 
-    background: rgba(5, 10, 18, 0.92);
-
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
 }
 
-
-/* =========================
-   IMAGE GRANDE
-========================= */
+.image-modal.hidden {
+    display: none !important;
+}
 
 .image-modal img {
-
-    max-width: 95vw;
-
-    max-height: 92vh;
-
-    width: auto;
-
-    height: auto;
-
+    display: block;
+    max-width: min(90vw, 900px);
+    max-height: 85vh;
     object-fit: contain;
 
-    border-radius: 10px;
+    border: 1px solid rgba(216, 181, 106, 0.35);
+    border-radius: 12px;
 
+    background: var(--bg-secondary);
     box-shadow:
-        0 20px 60px rgba(0, 0, 0, 0.6);
+        0 20px 65px rgba(0, 0, 0, 0.55),
+        0 0 35px rgba(216, 181, 106, 0.08);
 }
-
-
-/* =========================
-   BOUTON FERMER
-========================= */
 
 .modal-close {
+    position: absolute;
+    top: 22px;
+    right: 26px;
 
-    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    top: 20px;
+    width: 44px;
+    height: 44px;
 
-    right: 25px;
-
-    z-index: 1001;
-
-    width: 50px;
-
-    height: 50px;
-
-    border: none;
-
+    color: var(--gold-light);
+    background: rgba(17, 27, 46, 0.95);
+    border: 1px solid var(--border);
     border-radius: 50%;
 
-    background: rgba(50, 62, 80, 0.9);
-
-    color: white;
-
-    font-size: 36px;
-
-    line-height: 40px;
-
+    font-size: 1.7rem;
+    line-height: 1;
     cursor: pointer;
 
-    transition: 0.2s;
+    transition:
+        color var(--transition),
+        border-color var(--transition),
+        background var(--transition),
+        transform var(--transition);
 }
-
 
 .modal-close:hover {
-
-    background: #536174;
-
-    transform: scale(1.08);
+    color: #fff;
+    background: #29364a;
+    border-color: var(--gold);
+    transform: rotate(90deg);
 }
 
-
-/* =========================
-   FOOTER
-========================= */
+/* ---------- Pied de page ---------- */
 
 footer {
+    margin-top: 45px;
+    padding: 28px 20px;
 
-    padding: 15px;
-
-    border-top: 1px solid #293442;
-
+    color: var(--text-muted);
     text-align: center;
+    font-size: 0.9rem;
 
-    color: #718096;
-
-    font-size: 15px;
+    background: rgba(7, 11, 20, 0.65);
+    border-top: 1px solid var(--border);
 }
 
+footer a {
+    color: var(--gold);
+}
 
-/* =========================
-   MOBILE
-========================= */
+footer a:hover {
+    color: var(--gold-light);
+}
 
-@media (max-width: 600px) {
+/* ---------- Accessibilité ---------- */
 
-    header h1 {
-        font-size: 30px;
+:focus-visible {
+    outline: 2px solid var(--gold-light);
+    outline-offset: 3px;
+}
+
+/* ---------- Tablettes ---------- */
+
+@media (max-width: 800px) {
+    header {
+        padding: 44px 18px 30px;
     }
 
-
-    header p {
-        font-size: 15px;
+    .characters-grid {
+        grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+        gap: 16px;
     }
-
-
-    .search-container {
-        margin-top: 10px;
-    }
-
 
     .character-card {
-        width: 220px;
+        padding: 9px;
     }
 
+    .character-name {
+        font-size: 0.98rem;
+    }
+}
+
+/* ---------- Téléphones ---------- */
+
+@media (max-width: 480px) {
+    header {
+        padding: 36px 16px 26px;
+    }
+
+    header h1 {
+        letter-spacing: 0.03em;
+    }
+
+    header p {
+        font-size: 0.95rem;
+    }
+
+    #searchInput {
+        width: calc(100% - 28px);
+        margin-top: 24px;
+    }
+
+    .characters-grid {
+        width: calc(100% - 24px);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .character-card {
+        padding: 7px;
+        border-radius: 11px;
+    }
 
     .character-card img {
-        height: 280px;
+        border-radius: 7px;
     }
 
+    .character-name {
+        margin-top: 10px;
+        font-size: 0.88rem;
+    }
 
     .image-modal {
-        padding: 15px;
+        padding: 12px;
     }
 
-
-    .image-modal img {
-        max-width: 100vw;
-        max-height: 90vh;
+    .modal-close {
+        top: 12px;
+        right: 12px;
     }
+}
 
+/* ---------- Réduction des animations ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
 }
