@@ -1,8 +1,8 @@
 
-/* =========================================
-   GENSHIN FICHES — DIRECTION ARTISTIQUE
-   Bleu nuit • Or • Ambiance mystique
-   ========================================= */
+/* ============================================
+   GENSHIN FICHES
+   Direction artistique : bleu nuit et or
+   ============================================ */
 
 :root {
     --bg-main: #080d18;
@@ -28,7 +28,7 @@
     --transition: 0.25s ease;
 }
 
-/* ---------- Base ---------- */
+/* ---------- Réinitialisation ---------- */
 
 * {
     box-sizing: border-box;
@@ -43,6 +43,7 @@ body {
     min-height: 100vh;
     font-family: "Segoe UI", Arial, sans-serif;
     color: var(--text-main);
+    line-height: 1.6;
 
     background:
         radial-gradient(
@@ -56,16 +57,14 @@ body {
             transparent 30%
         ),
         var(--bg-main);
-
-    line-height: 1.6;
 }
 
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    pointer-events: none;
     z-index: -1;
+    pointer-events: none;
 
     background-image:
         radial-gradient(
@@ -84,7 +83,10 @@ body::before {
             transparent
         );
 
-    background-size: 240px 240px, 320px 320px, 400px 400px;
+    background-size:
+        240px 240px,
+        320px 320px,
+        400px 400px;
 }
 
 a {
@@ -102,13 +104,19 @@ input {
     font: inherit;
 }
 
-/* ---------- Header ---------- */
+/* ============================================
+   EN-TÊTE ET IDENTITÉ VISUELLE
+   Nécessite le HTML .site-brand et .header-content
+   ============================================ */
 
-header {
+header,
+.site-header {
     position: relative;
     overflow: hidden;
     text-align: center;
-    padding: 58px 20px 38px;
+
+    padding: 22px 20px 38px;
+
     border-bottom: 1px solid var(--border);
 
     background:
@@ -119,16 +127,21 @@ header {
         );
 }
 
+/* Cercles décoratifs en arrière-plan */
+
 header::before,
 header::after {
     content: "";
     position: absolute;
     left: 50%;
     top: 50%;
+
     width: 290px;
     height: 290px;
+
     border: 1px solid rgba(216, 181, 106, 0.08);
     border-radius: 50%;
+
     transform: translate(-50%, -50%);
     pointer-events: none;
 }
@@ -139,22 +152,94 @@ header::after {
     border-color: rgba(216, 181, 106, 0.06);
 }
 
-header h1 {
+/* Logo et nom du site */
+
+.site-brand {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+
+    margin-bottom: 28px;
+
+    color: var(--text-main);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.13em;
+
+    text-decoration: none;
+
+    transition:
+        opacity var(--transition),
+        color var(--transition);
+}
+
+.site-brand:hover {
+    color: var(--gold-light);
+    opacity: 0.88;
+}
+
+.site-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    width: 39px;
+    height: 39px;
+
+    color: var(--gold-light);
+    font-size: 1.8rem;
+    line-height: 1;
+
+    border: 1px solid var(--border-hover);
+    border-radius: 12px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(216, 181, 106, 0.16),
+        rgba(17, 27, 46, 0.9)
+    );
+
+    box-shadow: 0 0 20px rgba(216, 181, 106, 0.1);
+}
+
+.site-brand-text strong {
+    color: var(--gold-light);
+    font-weight: 750;
+}
+
+/* Titre principal */
+
+.header-content {
     position: relative;
     z-index: 1;
+    text-align: center;
+}
+
+header h1,
+.header-content h1 {
+    position: relative;
+    z-index: 1;
+
     margin: 0 0 10px;
 
     color: var(--gold-light);
     font-size: clamp(2rem, 5vw, 3.2rem);
     font-weight: 700;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.05em;
 
     text-shadow: 0 0 28px rgba(216, 181, 106, 0.18);
 }
 
-header p {
+header p,
+.header-content p {
     position: relative;
     z-index: 1;
+
     max-width: 650px;
     margin: 0 auto;
 
@@ -162,11 +247,14 @@ header p {
     font-size: 1.05rem;
 }
 
-/* ---------- Zone de recherche ---------- */
+/* ============================================
+   RECHERCHE
+   ============================================ */
 
 #searchInput {
     display: block;
     width: min(600px, calc(100% - 40px));
+
     margin: 32px auto 14px;
     padding: 14px 18px;
 
@@ -178,6 +266,7 @@ header p {
     outline: none;
 
     box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.18);
+
     transition:
         border-color var(--transition),
         box-shadow var(--transition),
@@ -191,20 +280,25 @@ header p {
 #searchInput:focus {
     border-color: var(--gold);
     background: #101b2e;
+
     box-shadow:
         0 0 0 3px rgba(216, 181, 106, 0.09),
         0 0 22px rgba(216, 181, 106, 0.08);
 }
 
-/* ---------- Boutons ---------- */
+/* ============================================
+   BOUTONS
+   ============================================ */
 
 .search-button,
 .clear-button {
     display: inline-block;
+
     margin: 5px;
     padding: 11px 20px;
 
     color: var(--gold-light);
+
     background: linear-gradient(
         135deg,
         rgba(39, 51, 72, 0.96),
@@ -213,6 +307,7 @@ header p {
 
     border: 1px solid var(--border);
     border-radius: 9px;
+
     cursor: pointer;
 
     transition:
@@ -228,6 +323,7 @@ header p {
     color: #fff5d8;
     border-color: var(--gold);
     background: rgba(63, 57, 43, 0.75);
+
     box-shadow: var(--glow);
     transform: translateY(-2px);
 }
@@ -237,40 +333,52 @@ header p {
     transform: translateY(0);
 }
 
-/* ---------- Informations de résultats ---------- */
+/* ============================================
+   INFORMATIONS SUR LES RÉSULTATS
+   ============================================ */
 
 .results-info {
     width: min(1200px, calc(100% - 40px));
+
     margin: 22px auto;
+
     color: var(--text-secondary);
     text-align: center;
     font-size: 0.95rem;
 }
 
-/* ---------- Grille des personnages ---------- */
+/* ============================================
+   GRILLE DES PERSONNAGES
+   ============================================ */
 
 .characters-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(180px, 1fr)
+    );
+
     gap: 22px;
+    align-items: stretch;
 
     width: min(1400px, calc(100% - 40px));
     margin: 28px auto 60px;
-    align-items: stretch;
 }
 
-/* ---------- Carte personnage ---------- */
+/* ============================================
+   CARTES DES PERSONNAGES
+   ============================================ */
 
 .character-card {
     position: relative;
-    overflow: hidden;
-    min-width: 0;
-
     display: flex;
     flex-direction: column;
     align-items: center;
 
+    min-width: 0;
+    overflow: hidden;
     padding: 12px;
+
     color: var(--text-main);
     text-align: center;
 
@@ -287,12 +395,15 @@ header p {
         box-shadow var(--transition);
 }
 
+/* Filet doré en haut de chaque carte */
+
 .character-card::before {
     content: "";
     position: absolute;
     top: 0;
     left: 15%;
     right: 15%;
+
     height: 1px;
 
     background: linear-gradient(
@@ -308,6 +419,7 @@ header p {
 
 .character-card:hover {
     transform: translateY(-6px);
+
     background: var(--bg-card-hover);
     border-color: var(--border-hover);
 
@@ -320,16 +432,21 @@ header p {
     opacity: 1;
 }
 
+/* Portrait du personnage */
+
 .character-card img {
     display: block;
+
     width: 100%;
     max-width: 240px;
     height: auto;
     aspect-ratio: 3 / 4;
+
     object-fit: cover;
     object-position: center top;
 
     background: #101a2b;
+
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 9px;
 
@@ -343,11 +460,14 @@ header p {
     filter: brightness(1.06);
 }
 
+/* Nom du personnage */
+
 .character-name {
     width: 100%;
-    margin: 13px 0 4px;
-    color: var(--gold-light);
 
+    margin: 13px 0 4px;
+
+    color: var(--gold-light);
     font-size: 1.05rem;
     font-weight: 650;
     line-height: 1.4;
@@ -355,10 +475,13 @@ header p {
     overflow-wrap: anywhere;
 }
 
-/* ---------- Aucun résultat ---------- */
+/* ============================================
+   AUCUN RÉSULTAT
+   ============================================ */
 
 .no-results {
     width: min(800px, calc(100% - 40px));
+
     margin: 45px auto;
     padding: 25px;
 
@@ -370,7 +493,9 @@ header p {
     border-radius: var(--radius);
 }
 
-/* ---------- Point d'interrogation / aide ---------- */
+/* ============================================
+   BOUTON D'AIDE
+   ============================================ */
 
 .question-mark {
     display: inline-flex;
@@ -383,10 +508,12 @@ header p {
 
     color: var(--gold-light);
     background: var(--bg-secondary);
+
     border: 1px solid var(--border);
     border-radius: 50%;
 
     cursor: pointer;
+
     transition:
         background var(--transition),
         border-color var(--transition),
@@ -399,13 +526,17 @@ header p {
     transform: rotate(8deg);
 }
 
-/* ---------- Classes utilitaires ---------- */
+/* ============================================
+   CLASSES UTILITAIRES
+   ============================================ */
 
 .hidden {
     display: none !important;
 }
 
-/* ---------- Fenêtre modale ---------- */
+/* ============================================
+   FENÊTRE MODALE
+   ============================================ */
 
 .image-modal {
     position: fixed;
@@ -417,6 +548,7 @@ header p {
     justify-content: center;
 
     padding: 24px;
+
     background: rgba(3, 6, 13, 0.88);
 
     backdrop-filter: blur(9px);
@@ -429,14 +561,17 @@ header p {
 
 .image-modal img {
     display: block;
+
     max-width: min(90vw, 900px);
     max-height: 85vh;
+
     object-fit: contain;
 
     border: 1px solid rgba(216, 181, 106, 0.35);
     border-radius: 12px;
 
     background: var(--bg-secondary);
+
     box-shadow:
         0 20px 65px rgba(0, 0, 0, 0.55),
         0 0 35px rgba(216, 181, 106, 0.08);
@@ -456,11 +591,13 @@ header p {
 
     color: var(--gold-light);
     background: rgba(17, 27, 46, 0.95);
+
     border: 1px solid var(--border);
     border-radius: 50%;
 
     font-size: 1.7rem;
     line-height: 1;
+
     cursor: pointer;
 
     transition:
@@ -474,10 +611,13 @@ header p {
     color: #fff;
     background: #29364a;
     border-color: var(--gold);
+
     transform: rotate(90deg);
 }
 
-/* ---------- Pied de page ---------- */
+/* ============================================
+   PIED DE PAGE
+   ============================================ */
 
 footer {
     margin-top: 45px;
@@ -499,22 +639,31 @@ footer a:hover {
     color: var(--gold-light);
 }
 
-/* ---------- Accessibilité ---------- */
+/* ============================================
+   ACCESSIBILITÉ
+   ============================================ */
 
 :focus-visible {
     outline: 2px solid var(--gold-light);
     outline-offset: 3px;
 }
 
-/* ---------- Tablettes ---------- */
+/* ============================================
+   TABLETTES
+   ============================================ */
 
 @media (max-width: 800px) {
-    header {
-        padding: 44px 18px 30px;
+    header,
+    .site-header {
+        padding: 22px 18px 30px;
     }
 
     .characters-grid {
-        grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+        grid-template-columns: repeat(
+            auto-fill,
+            minmax(145px, 1fr)
+        );
+
         gap: 16px;
     }
 
@@ -527,18 +676,36 @@ footer a:hover {
     }
 }
 
-/* ---------- Téléphones ---------- */
+/* ============================================
+   TÉLÉPHONES
+   ============================================ */
 
 @media (max-width: 480px) {
-    header {
-        padding: 36px 16px 26px;
+    header,
+    .site-header {
+        padding: 20px 14px 30px;
     }
 
-    header h1 {
+    .site-brand {
+        gap: 9px;
+        margin-bottom: 22px;
+        font-size: 0.82rem;
+    }
+
+    .site-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 1.55rem;
+    }
+
+    header h1,
+    .header-content h1 {
+        font-size: clamp(1.65rem, 7vw, 2.2rem);
         letter-spacing: 0.03em;
     }
 
-    header p {
+    header p,
+    .header-content p {
         font-size: 0.95rem;
     }
 
@@ -549,7 +716,12 @@ footer a:hover {
 
     .characters-grid {
         width: calc(100% - 24px);
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        grid-template-columns: repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
         gap: 12px;
         margin-top: 22px;
     }
@@ -578,7 +750,9 @@ footer a:hover {
     }
 }
 
-/* ---------- Réduction des animations ---------- */
+/* ============================================
+   RÉDUCTION DES ANIMATIONS
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
     *,
