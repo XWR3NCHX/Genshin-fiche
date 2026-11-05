@@ -508,5 +508,17 @@
   {
     "nom": "Shogun raiden SUB/DPS",
     "image": "images/Shogunraidendpsfile.jpg"
+  },
+  {
+    "nom":"Valeriy",
+    "image":"images/Valeriyfile.jpg"
+  },  
+  {
+    "nom":"Mitya DPS",
+    "image":"images/MityaDPSfile.jpg"
+  },
+  {
+    "nom":"Mitya SUB/DPS",
+    "image":"images/Mityasubdpsfile.jpg"
   }
 ]
